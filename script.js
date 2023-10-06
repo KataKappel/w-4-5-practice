@@ -1,39 +1,26 @@
-function myFunc() {
-    console.log("This is my function")
+console.log("hello world")
+
+function domManipulation() {
+    const rootElement = document.querySelector("#root")
+    console.log(rootElement)
+    rootElement.innerHTML = "this is done by dom manipulation"
 }
 
-myFunc()
-
-function greetMe(name) {
-    console.log(`Hello ${name}!`)
+function logClick() {
+    console.log('clicked')
 }
 
-greetMe("Kata")
+let tickCount = 0
 
-function addTwoNumbers(number1, number2) {
-    let sum = number1 + number2;
-    console.log(`The sum of two numbers (${number1}, ${number2}) is: ${sum}.`)
-    return sum
+function logTick() {
+    console.log(`tick ${tickCount}`)
+    tickCount++
 }
 
-addTwoNumbers(10, 2)
+window.addEventListener('load', domManipulation)
+window.addEventListener('click', logClick)
 
-let resultOfAddTwoNumbers = addTwoNumbers(10, 2)
-console.log(`the result of resultOfAddTwoNumbers is: ${resultOfAddTwoNumbers}`)
-
-function cbExample() {
-    console.log("I am a callback function")
-}
-
-cbExample()
-
-function funcExample(name, callback) {
-    console.log(`hello ${name}`)
-    callback()
-}
-
-funcExample("Ricsi", cbExample)
-
+window.setInterval(logTick, 1000)
 
 
 
