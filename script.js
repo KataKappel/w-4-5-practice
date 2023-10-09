@@ -1,27 +1,70 @@
-const arr = [1, 2, 3, 4, 5]
+const arr = ["egy", "kettő", "három", "négy"]
 
-function returnDouble(number) {
-    return number * 2
+console.log(arr.includes("kettő"))
+
+console.log(["one", "two", "three", "four"].includes("four"))
+
+const str = "Hello world"
+
+console.log(str.substring(3))
+console.log(str.charAt(4))
+//ez ugyanaz, mint a (str[4])
+
+const obj = {
+    name: "Gipsz Jakab",
+    age: 27,
+    pets: [
+        "Mirci",
+        "Lajcsi",
+        "Géza"
+    ],
+    children: [
+        {
+            name: "Gipsz Jancsi",
+            age: 5
+        },
+        {
+            name: "Gipsz Juli",
+            age: 11
+        }
+    ] 
 }
 
-const returnDouble2 = (number) => {
-    return number * 2
+//console.log(Object.keys(obj))
+
+for(const key of Object.keys(obj)) {
+    console.log(key, obj[key])
 }
 
-/* for (i = 0; i < arr.length; i++) {
-    console.log(returnDouble(arr[i]))
-} */
+//adott object kulcsain így tudunk végig iterálni és az összes kulcs értékét megkapni
 
-/* function logDouble(number) {
-    console.log(number * 2)
-} */
+const users = [
+    {
+        name: "John Doe",
+        age: 33
+    },
+    {
+        name: "Kis Pista",
+        age: 33
+    },
+    {
+        name: "Kovács János",
+        age: 54
+    },
+    {
+        name: "Márta Richárd",
+        age: 28
+    }
+]
 
-/* arr.forEach(function(element) {
-    console.log(element * 2)
-})
- */
-/* arr.forEach(logDouble) */
+//users.forEach((user) => console.log(user.name)) 
 
-for (i = 0; i < arr.length; i++) {
-    console.log(returnDouble2(arr[i]))
-}
+//const userNames = []
+
+//users.forEach((user) => userNames.push(user.name)) 
+
+const userNames = users.map((user,index) =>
+    console.log(index, user.name)
+)
+
+console.log(userNames)
